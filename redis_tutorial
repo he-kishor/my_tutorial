@@ -13,3 +13,43 @@ then the redis localhost ip:port will start
 if we type 
 127.0.0.1:6379>ping
 return=>pong
+
+
+#set up with Nodejs
+npm init -y
+npm install express 
+code app.js
+set port 
+npm install ioredis "install resdis package which help to setup with redis"
+code client.js
+
+client.js file
+'''
+const {Redis} = require("ioredis)
+const client = new Redis()
+module.exports = client
+
+'''
+app.js
+''' 
+const client = require("./client")
+async function init(){
+    await client.set(users:3,"Johan banega don")
+    const result = await client.get("users:3")
+    console.log(result)
+
+}
+
+// we can also setup the time frame where we can set expire time also
+
+async function init_ex(){
+    await client.expires(users:3,10)<=(10 second)>
+    const result = await client.get("users:4")
+    console.log(result)
+
+}
+init()
+init_ex()
+
+
+'''
