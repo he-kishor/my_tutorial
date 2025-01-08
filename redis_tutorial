@@ -1,0 +1,15 @@
+Run the redis on docker and create it image which help to us to develope the server
+$~ ->  docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+run the local host port on http://localhost:8001 at redis-stack
+run the commond to work on the container
+$=> docker exec -it <container id> bash 
+after this command we go into the container cmd
+eg=>~$=>root@e5fd326ea427:/# 
+after this to open redis cli enter 
+root@e5fd326ea427:/# redis-cli
+then the redis localhost ip:port will start 
+127.0.0.1:6379>
+
+if we type 
+127.0.0.1:6379>ping
+return=>pong
